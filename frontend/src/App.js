@@ -28,6 +28,7 @@ import EventsPage from './pages/Events';
 import EventDetailPage from './pages/EventDetail';
 import NewEventPage from './pages/NewEvent';
 import EventRootPage from './pages/EventRoot';
+import EditEventPage from './pages/EditEvent';
 
 const routeDefinitions = [
   {
@@ -39,7 +40,10 @@ const routeDefinitions = [
       {
         path: '/events/:eventId',
         element: <EventRootPage />,
-        children: [{ index: true, element: <EventDetailPage /> }],
+        children: [
+          { index: true, element: <EventDetailPage /> },
+          { path: '/events/:eventId/edit', element: <EditEventPage /> },
+        ],
       },
       { path: '/events/new', element: <NewEventPage /> },
     ],
@@ -52,4 +56,3 @@ const App = () => {
 };
 
 export default App;
-   
