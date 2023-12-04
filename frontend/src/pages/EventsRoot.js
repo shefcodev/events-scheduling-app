@@ -7,7 +7,9 @@ const EventRootPage = () => {
   return (
     <Fragment>
       <EventsNavigation />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </Fragment>
   );
 };

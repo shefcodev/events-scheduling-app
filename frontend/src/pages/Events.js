@@ -1,27 +1,34 @@
 import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
-const Events = [
-  { id: 1, title: 'Event 1' },
-  { id: 2, title: 'Event 2' },
-  { id: 3, title: 'Event 3' },
-];
+import EventsList from '../components/EventsList';
 
 const EventsPage = () => {
+  const data = useLoaderData();
+
+  // if (data.isError) {
+  //   return <p style={{ textAlign: 'center' }}>{data.message}</p>;
+  // }
+
+  const events = data.events;
+
   return (
     <Fragment>
-      <h1>Events Page</h1>
-      <ul>
-        {Events.map(({ id, title }) => (
-          <li key={id}>
-            <Link to={`/events/${id}`} style={{ textDecoration: 'none' }}>
-              {title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <EventsList events={events} />
     </Fragment>
   );
 };
 
 export default EventsPage;
+
+export const loader = async () => {
+  const response = await fetch('http://localhost:8080/event');
+
+  if (!response.ok) {
+    // return { isError: true, message: 'Could not fetch Events.' };
+
+    throw { message: 'Something went wromg!' };
+  } else {
+    return response;
+  }
+};
