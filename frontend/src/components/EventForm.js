@@ -2,11 +2,12 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './EventForm.module.css';
 
-function EventForm({ method, event }) {
+const EventForm = ({ method, event }) => {
   const navigate = useNavigate();
-  function cancelHandler() {
+
+  const cancelHandler = () => {
     navigate('..');
-  }
+  };
 
   return (
     <form className={styles.form}>
@@ -34,6 +35,6 @@ function EventForm({ method, event }) {
       </div>
     </form>
   );
-}
+};
 
 export default EventForm;
