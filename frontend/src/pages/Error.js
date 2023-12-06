@@ -6,17 +6,18 @@ import MainNavigation from '../components/MainNavigation';
 
 const ErrorPage = () => {
   const error = useRouteError();
+  console.log(error);
 
   let title = 'An error occured';
   let message = 'Could not fetch events';
 
   if (error.status === 500) {
-    title = JSON.parse(error.data).title;
-    message = JSON.parse(error.data).message;
+    title = error.data.title;
+    message = error.data.message;
   }
 
   if (error.status === 404) {
-    title = 'Not Found!';
+    title = 'Not found!';
     message = 'Could not find resource or page.';
   }
 

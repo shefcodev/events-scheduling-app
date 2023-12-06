@@ -1,9 +1,9 @@
 import styles from './EventItem.module.css';
 
-function EventItem({ event }) {
-  function startDeleteHandler() {
+const EventItem = ({ event }) => {
+  const startDeleteHandler = () => {
     // ...
-  }
+  };
 
   return (
     <article className={styles.event}>
@@ -17,6 +17,6 @@ function EventItem({ event }) {
       </menu>
     </article>
   );
-}
+};
 
 export default EventItem;
