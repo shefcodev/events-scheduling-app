@@ -1,6 +1,132 @@
 {
   "events": [
     {
+      "title": "Lagos Dev Fest 2024",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-10-05",
+      "description": "Lagos Developer Festival to be held in Landmark Beach, Lagos, NG.",
+      "id": "a9d369ed-512f-4dbe-ba0a-748b8738d427"
+    },
+    {
+      "title": "Lagos Dev Fest",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-16",
+      "description": "Lagos Developer Festival",
+      "id": "a05c8e45-4f46-46f7-a4f6-eda6616523c0"
+    },
+    {
+      "title": "SoloTrip to Dubai, UAE",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-02",
+      "description": "Last Event of the Year.",
+      "id": "24b1511e-1cd5-4506-a7e5-822ddc4c8f47"
+    },
+    {
+      "title": "Java Developer Fest",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-16",
+      "description": "A New Event to be held",
+      "id": "47b0f8f9-7f7d-43f3-a751-4e29eda3d13b"
+    },
+    {
+      "title": "Naming Ceremony",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-22",
+      "description": "New Event",
+      "id": "3e3f613a-85ee-4318-b9bc-e88abf39f2b7"
+    },
+    {
+      "title": "Homeless Home Visit",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-15",
+      "description": "Let's visit... ",
+      "id": "bdce2e34-0978-4f87-9567-f57764cbfb91"
+    },
+    {
+      "title": "Cinema Show",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-23",
+      "description": "Cinema and Movie Show",
+      "id": "e0f9e9bc-36e9-4b9a-9ffd-f68fbe6a6ca4"
+    },
+    {
+      "title": "End of the Anniversary",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-20",
+      "description": "End of the Year Anniversary",
+      "id": "ed6b2f46-1fe7-4436-a856-0ea7fa458130"
+    },
+    {
+      "title": "Eid Festival",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-20",
+      "description": "Islam Eid Fest",
+      "id": "99691f03-c25a-481c-b977-17557265b6a8"
+    },
+    {
+      "title": "Califonia DevFest",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-21",
+      "description": "Califonia DevFest",
+      "id": "d0b81c2d-df34-444f-bb87-1749acf398eb"
+    },
+    {
+      "title": "London DevFest",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-15",
+      "description": "London Software Engineers and Developers Fest held in December.",
+      "id": "69b3285b-fd27-44c1-9df9-5779ef464a46"
+    },
+    {
+      "title": "NYC Developer Conf ",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-11-30",
+      "description": "Newyork City Developer Conf to be held soon.",
+      "id": "68378f3f-2bc5-45cb-b400-eba99102e537"
+    },
+    {
+      "title": "NYC Developer Conf ",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-11-30",
+      "description": "Newyork City Developer Conf to be held soon.",
+      "id": "a9b665d7-c5cd-4edc-a10d-c627ccf5eb6e"
+    },
+    {
+      "title": "ECMA Annuel Conf",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-02",
+      "description": "ECMA Annual Conference held in Chicago.",
+      "id": "52c1e8b5-9a5c-43ad-a2fe-5c6410471f40"
+    },
+    {
+      "title": "React Native Conf",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-01",
+      "description": "React Native CLI and expo conference held in London, UK.",
+      "id": "41a6a5a4-cf11-494e-8e07-1494938a0646"
+    },
+    {
+      "title": "Vue Conf",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2024-01-06",
+      "description": "Vue Developers Conference to be held in Atlanta",
+      "id": "f583b34d-4f76-4215-9424-8ccf91720818"
+    },
+    {
+      "title": "React Conf",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-11-28",
+      "description": "ReactJS Conference 2023",
+      "id": "c0eeeee9-422b-440b-8d32-eb527b42ef82"
+    },
+    {
+      "title": "Node Conf",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "date": "2023-12-01",
+      "description": "Nodejs Conference 2021",
+      "id": "bc1e85c3-b72d-4c09-9134-0246d5c0c22c"
+    },
+    {
       "id": "e1",
       "title": "A dummy event",
       "date": "2023-02-22",
