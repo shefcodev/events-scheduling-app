@@ -1,40 +1,27 @@
-import { Fragment } from 'react';
-import { useLoaderData, json } from 'react-router-dom';
+import { Suspense } from 'react';
+import { useLoaderData, json, defer, Await } from 'react-router-dom';
 
 import EventsList from '../components/EventsList';
 
 const EventsPage = () => {
-  const data = useLoaderData();
-
-  console.log(data);
-
-  const events = data.events;
+  const { events } = useLoaderData();
+  console.log(events);
 
   return (
-    <Fragment>
-      <EventsList events={events} />
-    </Fragment>
+    <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+      <Await resolve={events}>
+        {({ events }) => <EventsList events={events} />}
+      </Await>
+    </Suspense>
   );
 };
 
 export default EventsPage;
 
-export const loader = async () => {
-  const response = await fetch('http://localhost:8080/events');
+export const loadEvents = async () => {
+  const response = await fetch('http://localhost:8080/events/');
 
   if (!response.ok) {
-    // return { isError: true, message: 'Could not fetch data' };
-    // throw new Response(
-    //   JSON.stringify({
-    //     title: 'An error occured.',
-    //     message: 'Could not fetch events.',
-    //   }),
-    //   {
-    //     status: 500,
-    //     statusText: 'An error occured',
-    //   }
-    // );
-
     throw json(
       {
         title: 'An error occurred.',
@@ -46,6 +33,15 @@ export const loader = async () => {
       }
     );
   } else {
-    return response;
+    const responseData = await response.json();
+    console.log(responseData);
+
+    return responseData;
   }
+};
+
+export const loader = () => {
+  return defer({
+    events: loadEvents(),
+  });
 };

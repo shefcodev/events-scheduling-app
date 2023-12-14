@@ -1,8 +1,16 @@
+import { Link, useSubmit } from 'react-router-dom';
+
 import styles from './EventItem.module.css';
 
 const EventItem = ({ event }) => {
+  const submit = useSubmit();
+
   const startDeleteHandler = () => {
-    // ...
+    const proceed = window.confirm('Are you sure?');
+
+    if (proceed) {
+      submit(null, { method: 'DELETE' });
+    }
   };
 
   return (
@@ -12,7 +20,7 @@ const EventItem = ({ event }) => {
       <time>{event.date}</time>
       <p>{event.description}</p>
       <menu className={styles.actions}>
-        <a href='edit'>Edit</a>
+        <Link to='edit'>Edit</Link>
         <button onClick={startDeleteHandler}>Delete</button>
       </menu>
     </article>

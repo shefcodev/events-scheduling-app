@@ -1,31 +1,42 @@
-import { Fragment } from 'react';
-import { useParams, useLoaderData, json } from 'react-router-dom';
-
-// import { loader } from './Events';
+import { Fragment, Suspense } from 'react';
+import {
+  useRouteLoaderData,
+  json,
+  redirect,
+  defer,
+  Await,
+} from 'react-router-dom';
 
 import EventItem from '../components/EventItem';
+import EventsList from '../components/EventsList';
+import { loadEvents } from './Events';
 
 const EventDetailPage = () => {
-  const params = useParams();
-  const param = params.eventId;
-
-  const data = useLoaderData();
-  console.log(data);
+  const { event, events } = useRouteLoaderData('event-detail');
 
   return (
     <Fragment>
-      {/* <EventItem event={data.events.find(({ id }, idx) => param === id)} /> */}
-      <EventItem event={data.event} />
+      <Suspense
+        fallback={<p style={{ textAlign: 'center' }}>Event loading...</p>}
+      >
+        <Await resolve={event}>
+          {({ event }) => <EventItem event={event} />}
+        </Await>
+      </Suspense>
+      <Suspense
+        fallback={<p style={{ textAlign: 'center' }}>Events loading...</p>}
+      >
+        <Await resolve={events}>
+          {({ events }) => <EventsList events={events} />}
+        </Await>
+      </Suspense>
     </Fragment>
   );
 };
 
 export default EventDetailPage;
 
-// export const eventDetailLoader = loader;
-
-export const loader = async ({ request, params }) => {
-  const id = params.eventId;
+const loadEvent = async (id) => {
   const response = await fetch('http://localhost:8080/events/' + id);
 
   if (!response.ok) {
@@ -40,6 +51,36 @@ export const loader = async ({ request, params }) => {
       }
     );
   } else {
-    return response;
+    const responseData = await response.json();
+    return responseData;
   }
+};
+
+export const loader = async ({ request, params }) => {
+  return defer({
+    event: await loadEvent(params.eventId),
+    events: loadEvents(),
+  });
+};
+
+export const action = async ({ request, params }) => {
+  const eventId = params.eventId;
+  const response = fetch('http://localhost:8080/events/' + eventId, {
+    method: request.method,
+  });
+
+  if (!response.ok) {
+    throw json(
+      {
+        title: 'An error occurred.',
+        message: 'Could not delete event.',
+      },
+      {
+        status: 500,
+        statusText: 'An error occurred',
+      }
+    );
+  }
+
+  return redirect('/events');
 };
